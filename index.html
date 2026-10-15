@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Candidature AD Poids Lourds</title>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout : un dossier de candidature à deux onglets (lettre, CV), dans l'identité du book */
+:root{--bg:#f6f4fb;--surface:#fff;--ink:#1b1530;--muted:#5d5674;--line:#e2dcef;--violet:#4b2d8f;--coral:#e2533f;--soft:#ece6f8;
+--display:'Syne','Trebuchet MS',sans-serif;--body:'Manrope','Segoe UI',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13101d;--surface:#1c1729;--ink:#f1edf9;--muted:#a9a1c0;--line:#2f2843;--violet:#b39af0;--coral:#ff7a66;--soft:#251e38;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13101d;--surface:#1c1729;--ink:#f1edf9;--muted:#a9a1c0;--line:#2f2843;--violet:#b39af0;--coral:#ff7a66;--soft:#251e38;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 60px}
+a{color:var(--violet);font-weight:600}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin:0}
+h1{font-family:var(--display);font-size:clamp(2rem,6vw,3.2rem);margin:6px 0 0;line-height:1.05;text-wrap:balance}
+h1 span{color:var(--violet)}
+.sub{color:var(--muted);margin:10px 0 0}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.meta-row span{font-size:.85rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.tabs{display:flex;gap:8px;margin:30px 0 0;border-bottom:1px solid var(--line)}
+.tabs button{font:700 .95rem var(--body);padding:10px 16px;border:0;background:none;color:var(--muted);border-bottom:3px solid transparent;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--coral)}
+.sheet{background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;padding:clamp(20px,5vw,44px)}
+.sheet p{margin:0 0 1em}
+.letter .head{font-size:.9rem;color:var(--muted);margin-bottom:1.4em}
+.letter .obj{font-weight:700;color:var(--ink)}
+h3{font-family:var(--display);font-size:1.1rem;color:var(--violet);margin:1.6em 0 .6em;letter-spacing:.02em}
+h3:first-child{margin-top:0}
+.job{margin-bottom:1.1em} .job h4{margin:0;font-size:1rem} .job h4 span{color:var(--violet)}
+.job .meta{margin:0;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+ul{margin:.4em 0 0;padding-left:1.1em} li{margin-bottom:.3em}
+.sk{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.sk span{min-width:0}
+.book{margin-top:28px;padding:22px;border-radius:14px;background:var(--soft);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.book p{margin:0;max-width:46ch}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--violet);color:var(--bg);text-decoration:none}
+.contact code{font-family:var(--mono);font-size:.9rem;user-select:all}
+@media (max-width:600px){.sk{grid-template-columns:1fr;gap:2px}}
+</style>
+<div class="wrap">
+  <p class="eyebrow">Candidature spontanée · AD Poids Lourds · Octobre 2026</p>
+  <h1>Jean Philippe <span>Koffi</span></h1>
+  <p class="sub">Chargé de Marketing Digital | Acquisition, Contenus, CRM &amp; IA</p>
+  <div class="meta-row"><span>Disponible immédiatement</span><span>Choisy-le-Roi, à quelques km d'Arcueil</span><span>Permis B, véhiculé</span></div>
+
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" id="t-lettre" aria-selected="true" aria-controls="p-lettre">Lettre de motivation</button>
+    <button type="button" role="tab" id="t-cv" aria-selected="false" aria-controls="p-cv">CV</button>
+  </div>
+  <section class="sheet letter" id="p-lettre" role="tabpanel" aria-labelledby="t-lettre">
+    <div class="head">À l'attention du Service Recrutement · AUTODISTRIBUTION, AD Poids Lourds · Arcueil<br>Choisy-le-Roi, le 15 octobre 2026<br><span class="obj">Objet : Candidature spontanée, chargé de marketing digital</span></div>
+    <p>Madame, Monsieur,</p>
+    <p>En 2021, Guillaume Faurès expliquait que Truckissimo représentait 4 à 5 % des commandes du réseau AD Poids Lourds, en précisant : « nous partions de très bas ». En novembre 2025, les e-catalogues Truckissimo étaient en démonstration sur votre stand de Solutrans. Entre les deux, il y a un enjeu d&#x27;adoption : faire d&#x27;un outil utile un réflexe pour des ateliers et des transporteurs habitués à commander par téléphone. C&#x27;est le genre de problème que j&#x27;aime résoudre, et c&#x27;est pourquoi je vous adresse cette candidature spontanée pour votre équipe marketing digital.</p><p>Quand j&#x27;ai commencé avec la Brasserie La Nation, l&#x27;établissement n&#x27;existait pas en ligne. J&#x27;ai mis en place un site avec réservation, ouvert les comptes Instagram et Facebook, produit les photos et les vidéos : 300 premiers abonnés en un mois, sans publicité. Pour Giet&#x27;Studio, un studio de fitness à Ivry, le besoin était de faire franchir la porte à de nouveaux membres : j&#x27;ai construit un tunnel complet, de l&#x27;annonce Meta au paiement en ligne, autour d&#x27;une séance découverte à 4,99 €. Chez Upshow, il a d&#x27;abord fallu installer la présence en ligne et l&#x27;image de marque. Une fois la marque établie, sont venus les besoins de prospection : tunnel de conversion, puis relances par email et SMS dans HubSpot, ajustées sur les taux d&#x27;ouverture, de clic et de conversion.</p><p>Chez Cheef All Marines, société de négoce pétrolier, vérifier un partenaire commercial prenait plusieurs semaines. L&#x27;outil de vérification que j&#x27;ai développé a ramené ce délai à deux ou trois jours. J&#x27;en ai retenu qu&#x27;un outil professionnel n&#x27;est adopté que s&#x27;il fait gagner du temps à celui qui s&#x27;en sert. C&#x27;est exactement l&#x27;enjeu de Truckissimo.</p><p>Pour vos premiers mois, je vois trois chantiers : un référencement local pensé pour vos 200 ateliers et points de distribution, une séquence d&#x27;activation Truckissimo par email et SMS segmentée selon la fréquence de commande, et un tableau de bord unique qui réunit trafic, positions et résultats des campagnes.</p><p>Après plusieurs missions menées pour des PME, je souhaite aujourd&#x27;hui m&#x27;engager durablement dans une seule entreprise. J&#x27;habite à Choisy-le-Roi, à quelques kilomètres d&#x27;Arcueil, je suis véhiculé et disponible immédiatement. Mes études de cas et réalisations sont réunies ici : <a href="book.html" target="_blank" rel="noopener">mon book de réalisations</a>. Je serais heureux d&#x27;en parler avec vous.</p>
+    <p>Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.</p>
+    <p><b>Jean Philippe Koffi</b></p>
+  </section>
+  <section class="sheet" id="p-cv" role="tabpanel" aria-labelledby="t-cv" hidden>
+    <h3>Profil</h3><p>Chargé de marketing digital, quatre ans d&#x27;expérience, double Master en Marketing digital et Data Analyst. Je pars toujours d&#x27;un besoin concret, puis je construis la réponse : site et tunnel de conversion, contenus photo et vidéo, SEO/SEA, emailing et SMS, LinkedIn et Instagram, mesurée dans Google Analytics et Looker Studio. Après plusieurs missions menées pour des PME, je souhaite m&#x27;engager durablement dans une seule entreprise. Disponible immédiatement.</p>
+    <h3>Expérience professionnelle</h3><div class='job'><h4>Responsable de projet marketing digital · <span>Upshow</span></h4><p class='meta'>Mission · Mai 2025 – Sept. 2026 · Ivry-sur-Seine</p><ul><li>Besoin de départ : installer la présence en ligne et l&#x27;image de marque. Mise en place de la landing page et de la page LinkedIn, ligne éditoriale, production photo et vidéo.</li><li>Une fois la marque établie, nouveaux besoins de prospection : tunnel de conversion, campagnes Google Ads et Meta Ads, relances automatisées par email et SMS dans HubSpot, ajustées sur les taux d&#x27;ouverture, de clic et de conversion.</li><li>Démarche étendue à deux clients : site internet pour AK Universe ; pour Giet&#x27;Studio (studio de fitness), tunnel complet avec offre découverte à 4,99 €, quatre angles d&#x27;annonces Meta, réservation et paiement en ligne en une minute.</li><li>Structuration de la relation client (HubSpot, Salesforce, Odoo) et reportings KPI dans Looker Studio.</li></ul></div><div class='job'><h4>Marketing &amp; Digital Performance Manager · <span>Brasserie La Nation</span></h4><p class='meta'>Mission · Sept. 2025 – Juil. 2026 · Île-de-France</p><ul><li>Constat : aucune présence en ligne. Création de l&#x27;écosystème digital complet : site avec réservation en ligne, Instagram et Facebook, photos et vidéos produites sur place.</li><li>Instagram : 300 premiers abonnés en un mois, sans publicité ; référencement local et campagnes Meta Ads ciblées.</li><li>Expérience en salle digitalisée : menu par QR code et programme de fidélité client.</li></ul></div><div class='job'><h4>Consultant transformation digitale · <span>Cheef All Marines</span></h4><p class='meta'>Févr. 2025 – Mai 2025 · Paris</p><ul><li>Négoce pétrolier : vérifier un partenaire prenait plusieurs semaines et exposait aux fraudes. Développement d&#x27;un outil de vérification des entreprises et de leurs dirigeants (Kbis, identité, solvabilité) : délai ramené à 2 à 3 jours.</li><li>Analyse des processus internes et mise en place d&#x27;outils CRM (HubSpot, Odoo).</li></ul></div><div class='job'><h4>Chargé de marketing digital et communication · <span>KYU Invest K&#x27;Osmétique</span></h4><p class='meta'>Sept. 2022 – Janv. 2025 · Paris</p><ul><li>Le site ne générait aucune vente : mise en place de la vente et de la réservation en ligne, devenues un canal régulier.</li><li>Instagram : de 0 à environ 2 000 abonnés, en alternant organique et campagnes payantes (budget d&#x27;environ 300 €) ; publicité avec modèle pour la marque Kaelis.</li><li>4 événements en boutique avec les marques distribuées (Purepousse, Les Secrets de Loly, Jia Paris) : 40 à 50 participants chacun, en majorité de nouveaux visiteurs, plus de la moitié repartis avec un achat.</li><li>Fidélisation : carte de fidélité (une prestation offerte après six).</li></ul></div><div class='job'><h4>Assistant marketing digital · <span>Bolle Brands</span></h4><p class='meta'>Janv. 2022 – Juil. 2022 · Lyon</p><ul><li>Appui aux campagnes digitales, suivi des KPI dans Excel et recommandations d&#x27;amélioration.</li></ul></div>
+    <h3>Projets</h3><ul><li><b>Codeur.com</b> : deux sites internet livrés à des clients PME ; suivi de l&#x27;acquisition de Giet&#x27;Studio.</li><li><b>Matchipy et Prospectia</b> : applications IA développées pour générer des candidatures personnalisées et qualifier des prospects B2B (FastAPI, React, IA générative).</li><li><b>Études de cas</b> : Decathlon, Carrefour, Sephora, Airbnb Paris (Python) : analyses sur données publiques, visibles dans mon book en ligne.</li></ul>
+    <h3>Compétences</h3><div class='sk'><b>Web &amp; contenus</b><span>WordPress, Wix, HTML/CSS (VS Code), landing pages, UX, rédaction web et print, photo et vidéo, Adobe</span></div><div class='sk'><b>Acquisition</b><span>Meta Ads, Google Ads, SEO local, Search Console, LinkedIn, Instagram, Facebook, veille concurrentielle</span></div><div class='sk'><b>CRM &amp; data</b><span>HubSpot, Salesforce, Odoo, emailing, SMS, automation, Google Analytics, Looker Studio, Tableau, Excel, Python</span></div><div class='sk'><b>IA &amp; méthode</b><span>IA générative, développement d&#x27;applications IA, Agile, coordination de prestataires</span></div>
+    <h3>Formation</h3><p><b>Master 1 &amp; 2 Data Analyst / Management Marketing</b><br>IA School, Boulogne-Billancourt · 2022 – 2024</p><p><b>Master 1 &amp; 2 Marketing Digital &amp; Communication</b><br>INSEEC, Lyon · 2021 – 2022</p><p><b>Licence Commerce International</b><br>IEA, Abidjan · 2018 – 2020</p>
+    <h3>Langues</h3><p>Français (langue maternelle) · Anglais (opérationnel)</p>
+  </section>
+
+  <div class="book"><p><b>Toutes mes réalisations</b> : expériences chiffrées, études de cas Decathlon, Carrefour, Sephora et Airbnb, projets IA.</p>
+  <a class="btn" href="book.html" target="_blank" rel="noopener">Ouvrir le book →</a></div>
+
+  <p class="contact" style="margin-top:24px">Me contacter : <code>Jeanphilippekoffi88@gmail.com</code> · <code>07 68 51 97 14</code></p>
+</div>
+<script>
+var tabs=document.querySelectorAll('[role=tab]');
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+})});
+if(location.hash==='#cv')document.getElementById('t-cv').click();
+</script>
+
+</body></html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Réalisations Jean Philippe Koffi</title>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout : une colonne éditoriale, chaque réalisation lue comme un parcours Besoin → Solution → Mesure */
+:root{
+  --bg:#f6f4fb; --surface:#ffffff; --ink:#1b1530; --muted:#5d5674; --line:#e2dcef;
+  --violet:#4b2d8f; --coral:#e2533f; --soft:#ece6f8;
+  --display:'Syne','Trebuchet MS',sans-serif; --body:'Manrope','Segoe UI',Arial,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13101d; --surface:#1c1729; --ink:#f1edf9; --muted:#a9a1c0; --line:#2f2843;
+  --violet:#b39af0; --coral:#ff7a66; --soft:#251e38; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13101d; --surface:#1c1729; --ink:#f1edf9; --muted:#a9a1c0; --line:#2f2843;
+  --violet:#b39af0; --coral:#ff7a66; --soft:#251e38; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--violet)}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+
+/* Hero */
+header.hero{padding-block:56px 40px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.hero h1 span{color:var(--violet)}
+.hero .role{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--muted);margin-top:14px;max-width:60ch}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:28px;font-family:var(--mono);font-size:.85rem}
+.flow b{font-weight:500;padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);animation:pulse 6s infinite}
+.flow b:nth-of-type(2){animation-delay:1.5s}.flow b:nth-of-type(3){animation-delay:3s}.flow b:nth-of-type(4){animation-delay:4.5s}
+.flow i{color:var(--muted);font-style:normal}
+@keyframes pulse{0%,20%{border-color:var(--coral);color:var(--coral)}30%,100%{border-color:var(--line);color:var(--ink)}}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:36px}
+.facts div{background:var(--surface);padding:18px}
+.facts strong{display:block;font-family:var(--display);font-size:1.7rem;color:var(--violet);font-variant-numeric:tabular-nums}
+.facts span{font-size:.85rem;color:var(--muted)}
+.avail{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;font-size:.95rem}
+.avail::before{content:"";width:9px;height:9px;border-radius:50%;background:#2fae6a;box-shadow:0 0 0 4px color-mix(in srgb,#2fae6a 25%,transparent)}
+
+section{padding-block:44px;border-top:1px solid var(--line)}
+section>.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:22px}
+section h2{font-size:clamp(1.6rem,4vw,2.3rem)}
+.lead{color:var(--muted);max-width:62ch;margin:8px 0 0}
+
+/* Parcours besoin → solution */
+.path{display:grid;gap:14px}
+.step{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:0}
+.step .who h3{font-size:1.15rem}
+.step .who p{margin:4px 0 0;color:var(--muted);font-size:.85rem;font-family:var(--mono)}
+.bsm{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;min-width:0}
+.bsm div{min-width:0}
+.bsm small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
+.bsm p{margin:0;font-size:.95rem}
+
+/* Études */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:600 .85rem var(--body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--violet);border-color:var(--violet);color:var(--bg)}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.case .tag{align-self:flex-start;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:var(--soft);color:var(--violet)}
+.case h3{font-size:1.4rem}
+.case .q{font-style:italic;color:var(--muted);margin:0}
+.kpis{display:flex;flex-wrap:wrap;gap:10px}
+.kpis span{font-family:var(--mono);font-size:.8rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px}
+.kpis span b{color:var(--coral);font-weight:500}
+.case ul{margin:0;padding-left:18px;font-size:.95rem}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:700;color:var(--violet)}
+details p{font-size:.92rem;margin:.6em 0 0}
+.note{font-size:.78rem;color:var(--muted);margin-top:auto}
+.case a.ext{font-weight:700}
+
+/* IA */
+.ia{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ia article{padding:24px;border-radius:16px;background:var(--soft);min-width:0}
+.ia h3{font-size:1.35rem;margin-bottom:8px}
+.ia p{margin:0 0 10px}
+.stack{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+
+/* Outils */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.tools h3{font-size:1rem;color:var(--violet);margin-bottom:6px;font-family:var(--body);font-weight:700}
+.tools p{margin:0;font-size:.93rem}
+
+/* Contact */
+.contact{display:flex;flex-wrap:wrap;gap:14px}
+.chip{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface)}
+.chip code{font-family:var(--mono);font-size:.9rem;user-select:all}
+.chip button{font:600 .8rem var(--body);border:0;background:var(--violet);color:var(--bg);padding:6px 10px;border-radius:8px;cursor:pointer}
+footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
+
+@media (max-width:760px){
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .step{grid-template-columns:1fr;gap:10px}
+  .bsm,.cases,.ia{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.flow b{animation:none}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">Book de réalisations · Octobre 2026</p>
+  <h1>Jean Philippe <span>Koffi</span></h1>
+  <p class="role">Chargé de marketing digital au croisement du marketing, de la data et de l'IA. Je pars toujours d'un besoin concret, je mets en place la solution, puis je mesure ce qu'elle change.</p>
+  <div class="flow" aria-label="Ma méthode">
+    <b>Besoin</b><i>→</i><b>Solution</b><i>→</i><b>Mesure</b><i>→</i><b>Amélioration</b>
+  </div>
+  <div class="facts">
+    <div><strong>4 ans</strong><span>d'expérience en marketing digital</span></div>
+    <div><strong>4</strong><span>études de cas sur entreprises réelles</span></div>
+    <div><strong>2–3 jours</strong><span>au lieu de plusieurs semaines pour vérifier un partenaire (Cheef)</span></div>
+    <div><strong>2</strong><span>applications IA développées</span></div>
+  </div>
+  <p class="avail">Disponible immédiatement · Île-de-France · Permis B, véhiculé</p>
+</header>
+
+<section id="parcours">
+  <div class="head"><div><p class="eyebrow">Expériences</p><h2>Le besoin d'abord</h2>
+  <p class="lead">Chaque mission a commencé par un problème réel. Voici ce que j'ai constaté et la réponse que j'y ai apportée.</p></div></div>
+  <div class="path">
+    <div class="step"><div class="who"><h3>Upshow</h3><p>Mission · Mai 2025 – Sept. 2026<br>Resp. projet marketing digital</p></div>
+      <div class="bsm"><div><small>Besoin</small><p>D'abord installer la présence en ligne et l'image de marque. Une fois la marque établie, prospecter et générer des contacts.</p></div>
+      <div><small>Solution</small><p>Landing page, page LinkedIn, ligne éditoriale, photo et vidéo ; puis tunnel de conversion, Google Ads et Meta Ads, relances email et SMS dans HubSpot. Démarche étendue à deux clients (AK Universe, Giet'Studio).</p></div>
+      <div><small>Mesure</small><p>Taux d'ouverture, de clic et de conversion suivis en continu pour ajuster messages et ciblage.</p></div></div></div>
+    <div class="step"><div class="who"><h3>Giet'Studio</h3><p>Studio de danse et fitness, Ivry<br>Tunnel d'acquisition</p></div>
+      <div class="bsm"><div><small>Besoin</small><p>Faire franchir la porte du studio à de nouveaux membres.</p></div>
+      <div><small>Solution</small><p>Séance découverte à 4,99 €, rareté (5 places par semaine), preuve sociale (4,6 étoiles sur 137 avis Google), quatre angles d'annonces Meta, réservation et paiement en ligne en une minute.</p></div>
+      <div><small>Mesure</small><p>Annonces actives et consultables dans la bibliothèque publicitaire de Meta.</p></div></div></div>
+    <div class="step"><div class="who"><h3>Brasserie La Nation</h3><p>Mission · Sept. 2025 – Juil. 2026<br>Marketing &amp; Digital Performance</p></div>
+      <div class="bsm"><div><small>Besoin</small><p>Aucune présence digitale : l'établissement n'existait pas en ligne.</p></div>
+      <div><small>Solution</small><p>Site avec réservation en ligne, Instagram et Facebook, photos et vidéos produites sur place, SEO local, Meta Ads, menu par QR code et programme de fidélité.</p></div>
+      <div><small>Mesure</small><p><b>300 premiers abonnés Instagram en un mois</b>, sans publicité.</p></div></div></div>
+    <div class="step"><div class="who"><h3>Cheef All Marines</h3><p>Févr. – Mai 2025<br>Consultant transformation digitale</p></div>
+      <div class="bsm"><div><small>Besoin</small><p>Dans le négoce pétrolier, vérifier un partenaire prenait plusieurs semaines et exposait aux fraudes.</p></div>
+      <div><small>Solution</small><p>Un outil développé sur mesure pour vérifier les entreprises et leurs dirigeants (Kbis, identité, solvabilité).</p></div>
+      <div><small>Mesure</small><p><b>Délai ramené à 2 à 3 jours</b>, le temps des retours bancaires.</p></div></div></div>
+    <div class="step"><div class="who"><h3>KYU Invest K'Osmétique</h3><p>Sept. 2022 – Janv. 2025<br>Chargé marketing digital</p></div>
+      <div class="bsm"><div><small>Besoin</small><p>Un site sans aucune vente et une boutique à faire connaître.</p></div>
+      <div><small>Solution</small><p>Vente et réservation en ligne, Instagram en organique et payant, publicité avec modèle pour Kaelis, 4 événements avec Purepousse, Les Secrets de Loly et Jia Paris, carte de fidélité.</p></div>
+      <div><small>Mesure</small><p><b>De 0 à environ 2 000 abonnés</b> ; 40 à 50 participants par événement, en majorité nouveaux, plus de la moitié repartis avec un achat.</p></div></div></div>
+  </div>
+</section>
+
+<section id="etudes">
+  <div class="head"><div><p class="eyebrow">Études de cas</p><h2>Quatre entreprises, quatre problèmes</h2>
+  <p class="lead">Projets d'entraînement personnels sur données publiques, menés comme une vraie mission : énoncé, analyse, recommandations, limites et sources.</p></div>
+  <div class="filters" role="group" aria-label="Filtrer par métier">
+    <button type="button" id="f-all" data-f="all" aria-pressed="true">Toutes</button>
+    <button type="button" id="f-mkt" data-f="mkt" aria-pressed="false">Marketing digital</button>
+    <button type="button" id="f-data" data-f="data" aria-pressed="false">Data</button>
+    <button type="button" id="f-proj" data-f="proj" aria-pressed="false">Gestion de projet</button>
+  </div></div>
+  <div class="cases">
+    <article class="case" data-k="mkt proj">
+      <span class="tag">Chargé de projet marketing digital</span>
+      <h3>Decathlon</h3>
+      <p class="q">Le programme de fidélité suit-il la montée de la marketplace ?</p>
+      <div class="kpis"><span><b>+49 %</b> marketplace France (presse)</span><span><b>≈1,5 %</b> valeur réelle d'un point</span><span><b>6</b> actions priorisées</span></div>
+      <ul><li>Vérification des chiffres : officiels, presse, contradictions relevées.</li><li>Calcul de la valeur réelle d'un point pour le client.</li><li>Plan en 3 phases sur 6 mois, test contre groupe témoin.</li></ul>
+      <details><summary>Ce que je recommande</summary><p>Mesurer d'abord la part des achats marketplace chez les membres, puis lever les frictions (alertes d'expiration, conversion en un clic) et tester l'extension des points à une catégorie marketplace. Priorité calculée impact ÷ effort.</p></details>
+      <p class="note">Initiative personnelle, non mandatée par Decathlon.</p>
+    </article>
+    <article class="case" data-k="proj mkt">
+      <span class="tag">Chef de projet digital</span>
+      <h3>Carrefour</h3>
+      <p class="q">Comment déployer la promotion personnalisée sans dépenser avant d'avoir prouvé la rentabilité ?</p>
+      <div class="kpis"><span><b>14,5 M</b> foyers actifs Club (France)</span><span><b>12 mois</b> de feuille de route</span><span><b>6</b> chantiers</span></div>
+      <ul><li>Lecture prudente des communiqués 2025 et du plan Carrefour 2030.</li><li>Pilote en hypermarchés mesuré contre un groupe témoin.</li><li>Gouvernance, risques RGPD et jalons de décision go / no go.</li></ul>
+      <details><summary>Ce que je recommande</summary><p>Commencer par l'état des données et du consentement, piloter sur quelques hypermarchés via l'application, ne généraliser que si les ventes incrémentales dépassent le coût des remises.</p></details>
+      <p class="note">Initiative personnelle, non mandatée par Carrefour.</p>
+    </article>
+    <article class="case" data-k="mkt data">
+      <span class="tag">Analyste marketing</span>
+      <h3>Sephora</h3>
+      <p class="q">Le +30 % de recrutement du programme My Sephora prouve-t-il son succès ?</p>
+      <div class="kpis"><span><b>+30 %</b> recrutement annoncé</span><span><b>5</b> KPI de pilotage</span><span><b>3</b> statuts analysés</span></div>
+      <ul><li>Distinction entre acquisition, activation et rétention.</li><li>Segmentation des profils captés et à risque.</li><li>Analyse des règles officielles du programme.</li></ul>
+      <details><summary>Ce que je recommande</summary><p>Suivre l'activation à 30 jours, la rétention Gold à 12 mois et le panier moyen par cohorte avant de parler de succès.</p></details>
+      <a class="ext" href="https://etude-my-sephora-cbgfwou.gamma.site/" target="_blank" rel="noopener">Voir l'étude complète →</a>
+      <p class="note">Initiative personnelle, non mandatée par Sephora.</p>
+    </article>
+    <article class="case" data-k="data">
+      <span class="tag">Data analyst · Python</span>
+      <h3>Airbnb Paris</h3>
+      <p class="q">Où en est le marché parisien après la loi Le Meur ?</p>
+      <div class="kpis"><span><b>48 140</b> annonces actives</span><span><b>42,4 %</b> de l'offre tenue par 10,9 % des hôtes</span><span><b>75 %</b> avec n° d'enregistrement</span></div>
+      <ul><li>Nettoyage de 77 679 lignes et 90 colonnes (pandas).</li><li>Prix : la capacité pèse plus que l'arrondissement.</li><li>Indicateurs de suivi de la réglementation.</li></ul>
+      <details><summary>Méthode</summary><p>Notebook Jupyter reproductible, journal de nettoyage en 8 décisions, limites explicites : occupation estimée, pas de lien de cause démontré.</p></details>
+      <p class="note">Données publiques Inside Airbnb, collecte de juin 2026.</p>
+    </article>
+  </div>
+</section>
+
+<section id="ia">
+  <div class="head"><div><p class="eyebrow">Projets IA</p><h2>Des outils construits pour mes propres besoins</h2></div></div>
+  <div class="ia">
+    <article><h3>Matchipy</h3>
+      <p><b>Besoin :</b> rédiger une candidature vraiment personnalisée prend des heures.</p>
+      <p><b>Solution :</b> une application qui analyse une offre, mesure la correspondance avec un profil, génère CV et lettre adaptés et contrôle leur lisibilité ATS.</p>
+      <p class="stack">FastAPI · React · MongoDB · IA générative</p></article>
+    <article><h3>Prospectia</h3>
+      <p><b>Besoin :</b> trouver et qualifier des prospects B2B plus vite.</p>
+      <p><b>Solution :</b> une plateforme de prospection assistée par IA : découverte d'entreprises, enrichissement des données, audit du site.</p>
+      <p class="stack">Données publiques Sirene · audit de site · IA générative</p></article>
+  </div>
+</section>
+
+<section id="outils">
+  <div class="head"><div><p class="eyebrow">Boîte à outils</p><h2>Ce que j'utilise au quotidien</h2></div></div>
+  <div class="tools">
+    <div><h3>Web &amp; contenus</h3><p>WordPress, Wix, HTML/CSS, landing pages, UX, rédaction web et print, photo et vidéo, Adobe</p></div>
+    <div><h3>Acquisition</h3><p>SEO, Search Console, Google Ads, Meta Ads, LinkedIn, Instagram</p></div>
+    <div><h3>CRM &amp; emailing</h3><p>HubSpot, Salesforce, Odoo, emailing, SMS, marketing automation</p></div>
+    <div><h3>Data &amp; IA</h3><p>Google Analytics, Looker Studio, Tableau, Excel, Python (pandas), IA générative</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="head"><div><p class="eyebrow">Contact</p><h2>Parlons de votre besoin</h2>
+  <p class="lead">Double Master en Marketing digital (INSEEC) et Data Analyst (IA School). Basé à Choisy-le-Roi.</p></div></div>
+  <div class="contact">
+    <div class="chip"><code id="mail">Jeanphilippekoffi88@gmail.com</code><button type="button" id="c-mail" data-copy="mail">Copier</button></div>
+    <div class="chip"><code id="tel">07 68 51 97 14</code><button type="button" id="c-tel" data-copy="tel">Copier</button></div>
+  </div>
+</section>
+<footer>Les études de cas sont des projets personnels d'entraînement fondés sur des sources publiques. Elles ne représentent pas des missions réalisées pour les entreprises citées.</footer>
+</div>
+
+<script>
+document.querySelectorAll('.filters button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    document.querySelectorAll('.filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    document.querySelectorAll('.case').forEach(function(c){c.hidden=!(f==='all'||c.dataset.k.split(' ').indexOf(f)>-1)});
+  });
+});
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.copy), t=el.textContent;
+    function done(){b.textContent='Copié';setTimeout(function(){b.textContent='Copier'},1500)}
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+  });
+});
+</script>
+
+</body></html>
