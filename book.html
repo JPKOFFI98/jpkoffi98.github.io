@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Réalisations Jean Philippe Koffi</title>
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}.actions .btn{display:inline-block;padding:11px 16px;border-radius:10px;background:var(--violet);color:var(--bg);text-decoration:none;font-weight:700}
+</style>
 </head><body>
 
 
@@ -117,7 +118,7 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
   </div>
   <div class="facts">
     <div><strong>4 ans</strong><span>d'expérience en marketing digital</span></div>
-    <div><strong>4</strong><span>études de cas sur entreprises réelles</span></div>
+    <div><strong>6</strong><span>études de cas sur entreprises réelles</span></div>
     <div><strong>2–3 jours</strong><span>au lieu de plusieurs semaines pour vérifier un partenaire (Cheef)</span></div>
     <div><strong>2</strong><span>applications IA développées</span></div>
   </div>
@@ -152,7 +153,7 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
 </section>
 
 <section id="etudes">
-  <div class="head"><div><p class="eyebrow">Études de cas</p><h2>Quatre entreprises, quatre problèmes</h2>
+  <div class="head"><div><p class="eyebrow">Études de cas</p><h2>Six entreprises, six problèmes</h2>
   <p class="lead">Projets d'entraînement personnels sur données publiques, menés comme une vraie mission : énoncé, analyse, recommandations, limites et sources.</p></div>
   <div class="filters" role="group" aria-label="Filtrer par métier">
     <button type="button" id="f-all" data-f="all" aria-pressed="true">Toutes</button>
@@ -161,6 +162,24 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
     <button type="button" id="f-proj" data-f="proj" aria-pressed="false">Gestion de projet</button>
   </div></div>
   <div class="cases">
+    <article class="case" data-k="proj mkt">
+      <span class="tag">Chef de projet digital</span>
+      <h3>CFTC</h3>
+      <p class="q">Tous les services passent par CFTC l'App : comment en faire un réflexe pour les adhérents et les militants ?</p>
+      <div class="kpis"><span><b>140 000</b> adhérents et militants revendiqués</span><span><b>3</b> chantiers reliés</span><span><b>7</b> points de recette</span></div>
+      <ul><li>Diagnostic à partir des pages officielles, de l'historique des versions et des avis.</li><li>Circuit unique : support, tickets de maintenance, recette, communication.</li><li>Kit d'adoption pour les militants, webinaires, indicateurs mensuels.</li></ul>
+      <a class="ext" href="https://jpkoffi98.github.io/cftc.html">Voir l'étude complète →</a>
+      <p class="note">Initiative personnelle, non mandatée par la CFTC.</p>
+    </article>
+    <article class="case" data-k="proj">
+      <span class="tag">Chef de projet digital</span>
+      <h3>Burger King France</h3>
+      <p class="q">Comment lancer vite sans que l'application, le paiement ou la connexion deviennent le point de rupture ?</p>
+      <div class="kpis"><span><b>617</b> restaurants</span><span><b>7,8 M</b> comptes Kingdom actifs</span><span><b>8</b> points de contrôle go / no go</span></div>
+      <ul><li>Diagnostic à partir des avis des stores et des signalements publics de 2026.</li><li>Grille de sévérité, backlog Run priorisé, post-mortems.</li><li>Rétroplanning de lancement et feuille de route à 90 jours.</li></ul>
+      <a class="ext" href="https://jpkoffi98.github.io/burger-king.html">Voir l'étude complète →</a>
+      <p class="note">Initiative personnelle, non mandatée par Burger King France.</p>
+    </article>
     <article class="case" data-k="mkt proj">
       <span class="tag">Chargé de projet marketing digital</span>
       <h3>Decathlon</h3>
@@ -168,6 +187,7 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
       <div class="kpis"><span><b>+49 %</b> marketplace France (presse)</span><span><b>≈1,5 %</b> valeur réelle d'un point</span><span><b>6</b> actions priorisées</span></div>
       <ul><li>Vérification des chiffres : officiels, presse, contradictions relevées.</li><li>Calcul de la valeur réelle d'un point pour le client.</li><li>Plan en 3 phases sur 6 mois, test contre groupe témoin.</li></ul>
       <details><summary>Ce que je recommande</summary><p>Mesurer d'abord la part des achats marketplace chez les membres, puis lever les frictions (alertes d'expiration, conversion en un clic) et tester l'extension des points à une catégorie marketplace. Priorité calculée impact ÷ effort.</p></details>
+      <a class="ext" href="https://jpkoffi98.github.io/decathlon.html">Voir l'étude complète →</a>
       <p class="note">Initiative personnelle, non mandatée par Decathlon.</p>
     </article>
     <article class="case" data-k="proj mkt">
@@ -177,6 +197,7 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
       <div class="kpis"><span><b>14,5 M</b> foyers actifs Club (France)</span><span><b>12 mois</b> de feuille de route</span><span><b>6</b> chantiers</span></div>
       <ul><li>Lecture prudente des communiqués 2025 et du plan Carrefour 2030.</li><li>Pilote en hypermarchés mesuré contre un groupe témoin.</li><li>Gouvernance, risques RGPD et jalons de décision go / no go.</li></ul>
       <details><summary>Ce que je recommande</summary><p>Commencer par l'état des données et du consentement, piloter sur quelques hypermarchés via l'application, ne généraliser que si les ventes incrémentales dépassent le coût des remises.</p></details>
+      <a class="ext" href="https://jpkoffi98.github.io/carrefour.html">Voir l'étude complète →</a>
       <p class="note">Initiative personnelle, non mandatée par Carrefour.</p>
     </article>
     <article class="case" data-k="mkt data">
@@ -196,6 +217,7 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
       <div class="kpis"><span><b>48 140</b> annonces actives</span><span><b>42,4 %</b> de l'offre tenue par 10,9 % des hôtes</span><span><b>75 %</b> avec n° d'enregistrement</span></div>
       <ul><li>Nettoyage de 77 679 lignes et 90 colonnes (pandas).</li><li>Prix : la capacité pèse plus que l'arrondissement.</li><li>Indicateurs de suivi de la réglementation.</li></ul>
       <details><summary>Méthode</summary><p>Notebook Jupyter reproductible, journal de nettoyage en 8 décisions, limites explicites : occupation estimée, pas de lien de cause démontré.</p></details>
+      <a class="ext" href="https://jpkoffi98.github.io/airbnb.html">Voir l'étude complète, graphiques inclus →</a>
       <p class="note">Données publiques Inside Airbnb, collecte de juin 2026.</p>
     </article>
   </div>
@@ -228,6 +250,7 @@ footer{padding-block:30px 50px;color:var(--muted);font-size:.85rem}
 <section id="contact">
   <div class="head"><div><p class="eyebrow">Contact</p><h2>Parlons de votre besoin</h2>
   <p class="lead">Double Master en Marketing digital (INSEEC) et Data Analyst (IA School). Basé à Choisy-le-Roi.</p></div></div>
+  <div class="actions"><a class="btn" href="mailto:Jeanphilippekoffi88@gmail.com?subject=Votre%20book%20de%20r%C3%A9alisations">Écrire un e-mail</a><a class="btn" href="https://wa.me/33768519714?text=Bonjour%20Jean%20Philippe%2C%20je%20vous%20contacte%20apr%C3%A8s%20avoir%20consult%C3%A9%20votre%20book." target="_blank" rel="noopener">WhatsApp</a><a class="btn" href="tel:+33768519714">Appeler</a></div>
   <div class="contact">
     <div class="chip"><code id="mail">Jeanphilippekoffi88@gmail.com</code><button type="button" id="c-mail" data-copy="mail">Copier</button></div>
     <div class="chip"><code id="tel">07 68 51 97 14</code><button type="button" id="c-tel" data-copy="tel">Copier</button></div>
