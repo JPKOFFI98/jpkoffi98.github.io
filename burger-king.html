@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lancer sans mauvaise surprise · Étude de cas</title>
+<meta name="description" content="Étude de cas indépendante de Jean Philippe Koffi : fiabiliser le run des plateformes digitales de Burger King France pendant les lancements produits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#F5EBDC;--surface:#FFFAF3;--ink:#502314;--muted:#7a5a48;--line:#e4d2bb;--violet:#D62300;--coral:#D62300;--flame:#FF8732;--soft:#EEDFCB;--ok:#2f7d4f;
+--display:'Bricolage Grotesque','Trebuchet MS',sans-serif;--body:'Manrope','Segoe UI',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65}
+.wrap{max-width:900px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+a{color:var(--violet);font-weight:600}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin:0}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(2.1rem,7vw,3.9rem);margin:10px 0 0}
+h1 em{font-style:normal;color:#FF8732}
+h2{font-size:clamp(1.5rem,4.5vw,2.2rem);margin:0 0 .5em}
+h3{font-size:1.12rem;margin:0 0 .4em}
+p{margin:0 0 1em}
+header.hero{padding:60px 0 46px;background:#502314;color:#F5EBDC;background-image:repeating-linear-gradient(-28deg,rgba(255,135,50,.10) 0 14px,transparent 14px 46px)}
+header.hero .eyebrow{color:#FF8732}header.hero .lead{color:#f3dcc4}header.hero .tags span{background:rgba(245,235,220,.1);border-color:rgba(245,235,220,.3);color:#F5EBDC}header.hero .disclaimer{color:#f3dcc4;border-color:#FF8732}
+.lead{font-size:1.15rem;color:var(--muted);max-width:62ch;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{font-size:.82rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.disclaimer{margin-top:22px;font-size:.86rem;color:var(--muted);border-left:3px solid var(--flame);padding:4px 0 4px 12px;max-width:70ch}
+nav.toc{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.toc ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.toc a{display:block;white-space:nowrap;font-size:.85rem;padding:6px 12px;border-radius:999px;text-decoration:none;color:var(--muted)}
+nav.toc a:hover{background:var(--soft);color:var(--ink)}
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+.num{font-family:var(--mono);font-size:.8rem;color:var(--flame);display:block;margin-bottom:6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:24px 0}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi b{display:block;font-family:var(--display);font-size:1.9rem;line-height:1;color:var(--ink)}
+.kpi span{display:block;font-size:.88rem;color:var(--muted);margin-top:8px}
+.kpi small{display:block;font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:8px;opacity:.8}
+.question{background:#D62300;color:#fff;border-radius:18px;padding:clamp(22px,5vw,38px);margin:8px 0 0}
+.question p{font-family:var(--display);font-size:clamp(1.25rem,3.6vw,1.75rem);line-height:1.25;margin:0}
+.question .eyebrow{color:#FFE2C8;margin-bottom:12px}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:26px 0 10px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;position:relative;min-width:0}
+.step .t{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.step h3{font-size:1rem;margin:4px 0 8px}
+.step ul{margin:0;padding-left:1em;font-size:.85rem;color:var(--muted)}
+.step li{margin-bottom:4px}
+.step .dot{position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:var(--coral)}
+.step .dot.mid{background:var(--flame)}
+.legend{font-size:.82rem;color:var(--muted)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin:0 5px 0 12px;vertical-align:middle}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;margin-top:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card p{font-size:.95rem;color:var(--muted);margin:0}
+.card .tag{font-family:var(--mono);font-size:.7rem;color:var(--coral);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:8px}
+.callout{background:var(--soft);border-radius:14px;padding:18px 20px;margin-top:20px;font-size:.95rem}
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:16px}
+th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
+.sev{font-family:var(--mono);font-weight:500;padding:2px 8px;border-radius:6px;background:var(--soft);white-space:nowrap}
+.sev.p1{background:var(--coral);color:#fff}
+.sev.p2{background:var(--flame);color:#241a14}
+.tablewrap{overflow-x:auto}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px}
+.tl{border-top:4px solid var(--flame);background:var(--surface);border-radius:0 0 12px 12px;padding:14px;min-width:0}
+.tl:nth-child(4){border-color:var(--coral)}
+.tl:nth-child(5){border-color:var(--ok)}
+.tl b{font-family:var(--display);font-size:1.15rem;display:block}
+.tl ul{margin:6px 0 0;padding-left:1em;font-size:.86rem;color:var(--muted)}
+.check{list-style:none;padding:0;margin:14px 0 0}
+.check li{padding:8px 0;border-bottom:1px dashed var(--line)}
+.check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:.95rem}
+.check input{margin-top:5px;accent-color:var(--ok);flex:none}
+.progress{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-top:10px}
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.road .card h3 span{color:var(--flame)}
+.road ul{margin:8px 0 0;padding-left:1.1em;font-size:.92rem;color:var(--muted)}
+.road li{margin-bottom:5px}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.match div{padding:14px 16px;border-bottom:1px solid var(--line);font-size:.93rem}
+.match div:nth-child(odd){background:var(--soft);font-weight:600}
+.match div:nth-last-child(-n+2){border-bottom:0}
+.sources ol{padding-left:1.2em;font-size:.88rem;color:var(--muted)}
+.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{padding:44px 0 64px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.cta p{margin:0;max-width:46ch}
+.btn{display:inline-block;padding:11px 18px;border-radius:10px;background:var(--violet);color:#fff;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--violet);border:1.5px solid var(--violet)}
+.contact{margin-top:18px;font-size:.9rem;color:var(--muted)}
+.contact code{font-family:var(--mono);user-select:all}
+@media (max-width:760px){
+ .journey,.timeline{grid-template-columns:1fr}
+ .road{grid-template-columns:1fr}
+ .match{grid-template-columns:1fr}
+ .match div:nth-child(odd){border-bottom:0;padding-bottom:4px}
+ .match div:nth-last-child(2){border-bottom:0}
+}
+@media print{nav.toc{display:none}section{break-inside:avoid-page}}
+.foot{padding:40px 0 60px;background:var(--soft)}.cta .who{margin:0;max-width:44ch}.btns{display:flex;gap:10px;flex-wrap:wrap}.btn{font-weight:700}.btn.ghost{background:transparent;color:#D62300;border:2px solid #D62300}.contact-line{margin-top:16px;font-size:.9rem;color:var(--muted)}.contact-line code{user-select:all}.copy{font:inherit;font-size:.8rem;padding:3px 9px;border-radius:6px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <p class="eyebrow">Étude de cas indépendante · Burger King France · Octobre 2026</p>
+  <h1>Lancer vite, <em>sans mauvaise surprise.</em></h1>
+  <p class="lead">Comment fiabiliser l'application, le site et les bornes au moment précis où un lancement produit concentre tout le trafic. Diagnostic à partir de données publiques, puis le dispositif que je mettrais en place dans le rôle de chef de projet digital.</p>
+  <div class="tags"><span>Run &amp; incidents</span><span>Lancements produits</span><span>Coordination produit, tech, opérations</span><span>Post-mortems</span><span>Pilotage par les indicateurs</span></div>
+  <p class="disclaimer">Travail personnel réalisé par Jean Philippe Koffi, non mandaté par Burger King France ni par le Groupe Bertrand. Toutes les données citées sont publiques et sourcées en fin de page ; les pistes proposées sont des hypothèses à confronter aux données internes.</p>
+ </div>
+</header>
+
+<nav class="toc" aria-label="Sommaire">
+ <div class="wrap"><ul>
+  <li><a href="#contexte">Contexte</a></li>
+  <li><a href="#probleme">Problématique</a></li>
+  <li><a href="#diagnostic">Diagnostic</a></li>
+  <li><a href="#run">Run</a></li>
+  <li><a href="#lancements">Lancements</a></li>
+  <li><a href="#feuille">90 jours</a></li>
+  <li><a href="#moi">Mon apport</a></li>
+  <li><a href="#sources">Sources</a></li>
+ </ul></div>
+</nav>
+
+<main>
+<section id="contexte">
+ <div class="wrap">
+  <span class="num">01 · Contexte</span>
+  <h2>Une enseigne où presque tout passe déjà par le digital</h2>
+  <p>Burger King France a franchi le cap des 600 restaurants fin 2025. Selon son directeur général, la quasi-totalité des commandes passe désormais par des outils digitaux, drive compris. Le programme de fidélité Kingdom compte 7,8 millions de comptes actifs, et la marque s'en sert déjà comme porte d'entrée de certains lancements, comme l'Ice Burger en 2026.</p>
+  <div class="kpis">
+   <div class="kpi"><b>617</b><span>restaurants en France, dont 573 franchisés</span><small>Rapport RSE 2025</small></div>
+   <div class="kpi"><b>2,04 Md€</b><span>de ventes à l'enseigne en 2025</span><small>Rapport RSE 2025</small></div>
+   <div class="kpi"><b>7,8 M</b><span>comptes Kingdom actifs</span><small>Rapport RSE 2025</small></div>
+   <div class="kpi"><b>≈ 100 %</b><span>des commandes traitées par des outils digitaux, drive compris</span><small>Directeur général, Républik, déc. 2025</small></div>
+  </div>
+  <p>Le calendrier 2026 montre un rythme soutenu : le Löris Tomates Oignons est sorti le 7 juillet dans tout le réseau en même temps, sans test régional. L'Ice Burger a été proposé en avant-première aux membres Kingdom de l'application dès le 25 août, via des coupons à scanner en borne ou à ajouter à une commande, avant son ouverture à tous le 8 septembre. Il n'était pas disponible en livraison, et certains restaurants ne participaient pas.</p>
+  <div class="callout">Chaque lancement de ce type mobilise en même temps l'application, le site, les bornes, la tablette restaurant, les supports en magasin et des centaines de franchisés. C'est exactement le périmètre du poste : <b>garder les plateformes stables et livrer les opérations sans mauvaise surprise.</b></div>
+ </div>
+</section>
+
+<section id="probleme">
+ <div class="wrap">
+  <span class="num">02 · Problématique</span>
+  <h2>La question que je me suis posée</h2>
+  <div class="question">
+   <p class="eyebrow">Problématique</p>
+   <p>Quand un lancement passe par l'application et Kingdom, comment éviter que le run (connexion, coupons, paiement, retrait) devienne le point de rupture de l'expérience client au moment le plus visible ?</p>
+  </div>
+ </div>
+</section>
+
+<section id="diagnostic">
+ <div class="wrap">
+  <span class="num">03 · Diagnostic</span>
+  <h2>Ce que disent les signaux publics</h2>
+  <p>J'ai croisé trois sources accessibles à tous : les signalements d'utilisateurs sur un site de suivi des pannes (mai à octobre 2026), les avis des stores et les communications de la marque. Ces signaux sont déclaratifs et ne donnent pas de volumes ; ils indiquent où regarder, pas l'ampleur exacte.</p>
+
+  <div class="cards">
+   <div class="card"><span class="tag">Signal 1</span><h3>Le paiement revient le plus souvent</h3><p>Cartes refusées en click &amp; collect, paiement validé mais commande non transmise, plusieurs signalements le même jour début octobre.</p></div>
+   <div class="card"><span class="tag">Signal 2</span><h3>La connexion fragilise la fidélité</h3><p>Reconnexions demandées régulièrement, codes de connexion ou de réinitialisation non reçus. Un client qui n'arrive pas à se connecter en caisse ne cumule pas ses couronnes.</p></div>
+   <div class="card"><span class="tag">Signal 3</span><h3>Un écart net entre iOS et Android</h3><p>4,8/5 sur l'App Store contre 4,0/5 sur Google Play, avec des avis Android récents sur des lenteurs et un défilement des offres bloqué (août 2026). Les deux notes ne reposent pas sur le même historique : à lire comme une tendance.</p></div>
+   <div class="card"><span class="tag">Signal 4</span><h3>Une mise à jour qui a duré</h3><p>Après une mise à jour du 30 avril 2026, des utilisateurs Android signalent pendant plus de dix jours que l'application ne s'ouvre plus. C'est précisément ce qu'un standard de mise en production et un plan de retour arrière doivent éviter.</p></div>
+   <div class="card"><span class="tag">Signal 5</span><h3>Septembre, le mois le plus chargé</h3><p>Environ un tiers des signalements visibles. Deux épisodes distincts : début septembre, des commandes d'environ 150 € que les clients disent ne pas avoir passées, suivies d'une connexion impossible (piste de comptes compromis, non confirmée) ; du 18 au 21 septembre, paiement impossible en click &amp; collect.</p></div>
+   <div class="card"><span class="tag">Ce que je n'ai pas trouvé</span><h3>Pas de pic visible pendant l'avant-première</h3><p>Fin août, pendant l'avant-première de l'Ice Burger, les signalements restent peu nombreux. Je ne relie donc pas les incidents de septembre au lancement : ce serait une conclusion que les données publiques ne permettent pas.</p></div>
+  </div>
+
+  <h3 style="margin-top:36px">Où se situent les irritants dans le parcours d'un lancement</h3>
+  <div class="journey" role="list">
+   <div class="step" role="listitem"><span class="dot mid" aria-hidden="true"></span><span class="t">Étape 1</span><h3>Découvrir l'offre</h3><ul><li>Offres qui ne défilent pas</li><li>Lenteurs de chargement</li></ul></div>
+   <div class="step" role="listitem"><span class="dot" aria-hidden="true"></span><span class="t">Étape 2</span><h3>Se connecter</h3><ul><li>Reconnexions fréquentes</li><li>Code non reçu</li><li>Comptes compromis (à confirmer)</li></ul></div>
+   <div class="step" role="listitem"><span class="dot mid" aria-hidden="true"></span><span class="t">Étape 3</span><h3>Activer le coupon</h3><ul><li>Restaurant non participant</li><li>Offre absente du canal choisi</li></ul></div>
+   <div class="step" role="listitem"><span class="dot" aria-hidden="true"></span><span class="t">Étape 4</span><h3>Payer</h3><ul><li>Carte refusée</li><li>Erreurs serveur (502)</li></ul></div>
+   <div class="step" role="listitem"><span class="dot mid" aria-hidden="true"></span><span class="t">Étape 5</span><h3>Récupérer</h3><ul><li>Commande non transmise</li><li>Coupon perdu si le paiement échoue</li></ul></div>
+  </div>
+  <p class="legend"><i style="background:var(--coral)"></i>irritant fréquemment signalé <i style="background:var(--flame)"></i>irritant ponctuel ou risque identifié</p>
+
+  <div class="callout"><b>Ma lecture.</b> Les irritants se concentrent sur les étapes qui font perdre une vente (connexion, paiement) et sur celles qui dépendent de la coordination entre le marketing, la tech et les restaurants (coupon disponible ou non, restaurant participant ou non). S'y ajoutent deux sujets que tout run doit traiter en priorité : la sécurité des comptes clients et la qualité des mises à jour. Ce n'est pas d'abord un problème de produit : c'est un problème de préparation des mises en production et de gestion du run, avant et pendant les temps forts.</div>
+ </div>
+</section>
+
+<section id="run">
+ <div class="wrap">
+  <span class="num">04 · Solution, volet 1</span>
+  <h2>Run et stabilité : réduire la charge, fiabiliser le quotidien</h2>
+  <p>J'ai repéré que le besoin n'est pas d'ajouter des outils, mais de donner un cadre commun à des équipes qui ne se voient pas : Product Owners, partenaires tech, marketing et opérations restaurants. Voici le dispositif que je mettrais en place.</p>
+
+  <h3 style="margin-top:28px">1. Une grille de sévérité partagée</h3>
+  <div class="tablewrap"><table>
+   <thead><tr><th>Niveau</th><th>Exemple</th><th>Qui est prévenu</th><th>Délai de prise en charge</th></tr></thead>
+   <tbody>
+    <tr><td><span class="sev p1">P1</span></td><td>Paiement impossible sur l'app ou le web, application qui ne s'ouvre plus, suspicion de comptes clients compromis</td><td>Responsable digitale, partenaire tech, opérations, service client</td><td>Immédiat, point toutes les 30 min</td></tr>
+    <tr><td><span class="sev p2">P2</span></td><td>Coupon d'un lancement inactif, connexion dégradée, crash sur un seul système</td><td>Product Owner concerné, partenaire tech</td><td>Dans l'heure</td></tr>
+    <tr><td><span class="sev">P3</span></td><td>Erreur d'affichage, lenteur localisée, libellé peu clair</td><td>Backlog Run</td><td>Revue hebdomadaire</td></tr>
+    <tr><td><span class="sev">P4</span></td><td>Amélioration de confort</td><td>Backlog produit</td><td>Selon priorisation</td></tr>
+   </tbody>
+  </table></div>
+  <p class="legend" style="margin-top:8px">Les délais sont une proposition de départ, à caler avec les engagements contractuels des partenaires tech.</p>
+
+  <div class="cards" style="margin-top:28px">
+   <div class="card"><span class="tag">2 · Backlog Run</span><h3>Prioriser avec un score simple</h3><p>Impact client × fréquence × chiffre d'affaires exposé, divisé par l'effort. Une revue hebdomadaire de 30 minutes avec les Product Owners pour arbitrer.</p></div>
+   <div class="card"><span class="tag">3 · Post-mortem</span><h3>Une page, sans recherche de coupable</h3><p>Pour chaque P1 et P2, sous cinq jours ouvrés : ce qui s'est passé, l'impact, la cause, l'action corrective, son responsable et sa date.</p></div>
+   <div class="card"><span class="tag">4 · Standards</span><h3>Une définition commune de « prêt pour la prod »</h3><p>Tests sur les canaux concernés (app iOS et Android, web, borne, tablette), mise à jour de l'application diffusée par étapes, plan de retour arrière, message client prêt, restaurants informés.</p></div>
+   <div class="card"><span class="tag">5 · Tableau de bord</span><h3>Six indicateurs suivis chaque semaine</h3><p>Taux d'échec de paiement, taux de connexion réussie, taux de crash par système et par version, incidents P1 et P2, délai moyen de résolution, note des stores par système.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="lancements">
+ <div class="wrap">
+  <span class="num">05 · Solution, volet 2</span>
+  <h2>Lancements : livrer vite, bien et sans mauvaise surprise</h2>
+  <p>L'avant-première Kingdom est une chance : c'est un test grandeur nature avant l'ouverture à tous. Je propose de l'utiliser comme tel, avec un rétroplanning identique pour chaque opération.</p>
+
+  <div class="timeline">
+   <div class="tl"><b>J-14</b><ul><li>Calendrier unique opérations et mises en production</li><li>Liste des restaurants participants</li></ul></div>
+   <div class="tl"><b>J-7</b><ul><li>Coupons paramétrés et testés sur tous les canaux</li><li>Supports en magasin validés</li></ul></div>
+   <div class="tl"><b>J-3</b><ul><li>Gel des mises en production non liées</li><li>Go / no-go avec la Responsable digitale</li></ul></div>
+   <div class="tl"><b>J0</b><ul><li>Suivi renforcé des indicateurs</li><li>Canal d'escalade ouvert</li></ul></div>
+   <div class="tl"><b>J+7</b><ul><li>Bilan avant-première vs ouverture générale</li><li>Corrections pour l'opération suivante</li></ul></div>
+  </div>
+
+  <h3 style="margin-top:32px">La checklist go / no-go que j'utiliserais</h3>
+  <ul class="check" id="checklist">
+   <li><label><input type="checkbox"> Le coupon s'active sur l'app iOS, l'app Android, le web et se scanne en borne</label></li>
+   <li><label><input type="checkbox"> Les restaurants non participants n'affichent pas l'offre dans l'application</label></li>
+   <li><label><input type="checkbox"> Les canaux exclus (livraison, par exemple) sont clairement indiqués au client</label></li>
+   <li><label><input type="checkbox"> Le parcours de paiement a été testé avec le pic de trafic attendu</label></li>
+   <li><label><input type="checkbox"> Aucune autre mise en production n'est prévue dans les trois jours</label></li>
+   <li><label><input type="checkbox"> Le service client dispose d'une FAQ et d'un message prêt en cas d'incident</label></li>
+   <li><label><input type="checkbox"> Les équipes restaurants ont reçu les consignes et les supports</label></li>
+   <li><label><input type="checkbox"> Un plan de retour arrière est documenté et a un responsable</label></li>
+  </ul>
+  <p class="progress" id="progress" aria-live="polite">0 / 8 points validés</p>
+ </div>
+</section>
+
+<section id="feuille">
+ <div class="wrap">
+  <span class="num">06 · Feuille de route</span>
+  <h2>Mes 90 premiers jours</h2>
+  <div class="road">
+   <div class="card"><h3><span>J1 à J30</span> · Comprendre</h3><ul><li>Rencontrer chaque Product Owner, les partenaires tech et les opérations</li><li>Passer du temps en restaurant, côté borne et tablette</li><li>Reprendre l'historique des incidents et en tirer les dix irritants majeurs</li></ul></div>
+   <div class="card"><h3><span>J31 à J60</span> · Structurer</h3><ul><li>Mettre en place la grille de sévérité et le circuit d'escalade</li><li>Lancer le backlog Run et sa revue hebdomadaire</li><li>Appliquer la checklist go / no-go au prochain lancement</li></ul></div>
+   <div class="card"><h3><span>J61 à J90</span> · Mesurer</h3><ul><li>Publier le tableau de bord Run</li><li>Animer les premiers post-mortems</li><li>Faire un bilan chiffré avec la Responsable digitale et ajuster</li></ul></div>
+  </div>
+  <div class="callout"><b>Ce que l'on doit voir à 90 jours :</b> moins d'incidents P1 et P2 pendant les opérations, un délai de résolution qui baisse, l'écart de note entre iOS et Android qui se réduit, et une équipe digitale qui passe moins de temps à éteindre des incendies.</div>
+ </div>
+</section>
+
+<section id="moi">
+ <div class="wrap">
+  <span class="num">07 · Mon apport</span>
+  <h2>Pourquoi ce sujet me ressemble</h2>
+  <p>Je n'ai pas choisi ce sujet par hasard : il recoupe ce que j'ai déjà fait, à une autre échelle.</p>
+  <div class="match">
+   <div>Coordonner produit, tech, design et opérations</div><div>Chez Upshow, j'ai piloté des projets digitaux pour l'entreprise et deux clients, de la présence en ligne aux tunnels de conversion, en coordonnant les intervenants jusqu'à la mise en ligne.</div>
+   <div>Réduire la charge opérationnelle</div><div>Chez Cheef All Marines, j'ai repéré que la vérification des contreparties prenait plusieurs semaines ; j'ai mis en place un outil qui l'a ramenée à deux ou trois jours.</div>
+   <div>Connaître le terrain de la restauration</div><div>À la Brasserie La Nation, j'ai mis en place la réservation en ligne, le menu par QR code et un programme de fidélité : je sais ce qu'un outil digital qui tombe en service provoque en salle.</div>
+   <div>Livrer des produits digitaux</div><div>Via Codeur.com, j'ai livré deux sites internet à des PME, de la recette à la mise en ligne.</div>
+   <div>Piloter par les données</div><div>Formé en data analyse, je construis mes tableaux de suivi (Looker Studio, Excel, Google Analytics) pour décider sur des faits.</div>
+  </div>
+ </div>
+</section>
+
+<section id="sources" class="sources">
+ <div class="wrap">
+  <span class="num">08 · Sources et limites</span>
+  <h2>Sources</h2>
+  <ol>
+   <li>Burger King France, Rapport annuel RSE 2025 (publié en juillet 2026) : <a href="https://www.groupe-bertrand.com/wp-content/uploads/2026/07/BK_RA_RSE_2025_FINALE.pdf" target="_blank" rel="noopener">groupe-bertrand.com</a></li>
+   <li>Républik Retail, « Burger King accélère : nouveaux formats, IA en cuisine et concept Miami en 2026 », 3 décembre 2025 : <a href="https://www.republikgroup.com/articles/17f0764e-b7b2-f111-a6a7-6045bd9f5987/burger-king-accelere-nouveaux-formats-ia-en-cuisine-et-concept-miami-en-2026" target="_blank" rel="noopener">republikgroup.com</a></li>
+   <li>L'Express Franchise, lancement de l'Ice Burger (avant-première application le 25 août 2026) : <a href="https://lexpress-franchise.com/actualites/burger-king-lance-ice-burger-au-nutella-ou-speculoos/" target="_blank" rel="noopener">lexpress-franchise.com</a></li>
+   <li>L'Express Franchise, lancement du Löris Tomates Oignons le 7 juillet 2026 : <a href="https://lexpress-franchise.com/actualites/burger-king-lance-le-loris-tomates-oignons-avec-loris-giuliano-ce-mardi-7-juillet-2026/" target="_blank" rel="noopener">lexpress-franchise.com</a></li>
+   <li>Application Burger King France sur l'App Store (note et avis) : <a href="https://apps.apple.com/fr/app/burger-king-france/id924879230" target="_blank" rel="noopener">apps.apple.com</a></li>
+   <li>Application Burger King France sur Google Play (note et avis) : <a href="https://play.google.com/store/apps/details?id=air.com.unit9.bkFrApp" target="_blank" rel="noopener">play.google.com</a></li>
+   <li>Signalements d'utilisateurs, mai à octobre 2026 : <a href="https://www.totalbug.com/burger-king/" target="_blank" rel="noopener">totalbug.com</a></li>
+   <li>Programme Kingdom, page d'aide officielle : <a href="https://support.burgerking.fr/hc/fr/articles/18874118936476-Qu-est-ce-que-le-programme-fid%C3%A9lit%C3%A9-Kingdom" target="_blank" rel="noopener">support.burgerking.fr</a></li>
+  </ol>
+  <p class="legend" style="margin-top:14px">Limites : les signalements d'utilisateurs (environ 55 visibles de mai à octobre 2026) sont déclaratifs, non vérifiés et ne mesurent pas le volume réel d'incidents. Les notes des stores évoluent dans le temps (relevées le 16 octobre 2026). Aucune donnée interne n'a été utilisée.</p>
+ </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">
+ <div class="cta">
+  <div><p class="eyebrow">Contact</p><p class="who"><b>Jean Philippe Koffi</b>, chef de projet marketing digital. Disponible immédiatement, en Île-de-France.</p></div>
+  <div class="btns">
+   <a class="btn" href="https://jpkoffi98.github.io/book.html">Voir toutes mes réalisations &#8594;</a>
+   <a class="btn ghost" href="mailto:Jeanphilippekoffi88@gmail.com?subject=Votre%20%C3%A9tude%20de%20cas%20Burger%20King">Écrire un e-mail</a>
+   <a class="btn ghost" href="https://wa.me/33768519714?text=Bonjour%20Jean%20Philippe%2C%20je%20vous%20contacte%20au%20sujet%20de%20votre%20%C3%A9tude%20de%20cas." target="_blank" rel="noopener">WhatsApp</a>
+   <a class="btn ghost" href="tel:+33768519714">Appeler</a>
+  </div>
+ </div>
+ <p class="contact-line">E-mail : <code id="mail">Jeanphilippekoffi88@gmail.com</code> <button type="button" class="copy" data-copy="mail">Copier</button> · Tél. : <code>07 68 51 97 14</code></p>
+</div></footer>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+ var el=document.getElementById(b.dataset.copy),t=el.textContent;
+ function done(){b.textContent='Copié';setTimeout(function(){b.textContent='Copier'},1500)}
+ function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+ try{navigator.clipboard.writeText(t).then(done,sel)}catch(x){sel()}
+})});
+</script>
+<script>
+(function(){
+ var boxes=document.querySelectorAll('#checklist input');
+ var out=document.getElementById('progress');
+ function upd(){var n=0;boxes.forEach(function(b){if(b.checked)n++});out.textContent=n+' / '+boxes.length+' points validés'+(n===boxes.length?' · prêt pour le lancement':'');}
+ boxes.forEach(function(b){b.addEventListener('change',upd)});
+})();
+</script>
+</body>
+</html>
